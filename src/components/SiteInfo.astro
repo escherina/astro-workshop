@@ -1,0 +1,22 @@
+---
+import Markdown from 'astro/components'
+
+const { company, thing } = Astro.props
+---
+
+<style>
+  article {
+    background-color: #253048;
+    font-size: 1.25rem;
+    line-height: 1.7;
+    padding: 1rem;
+  }
+</style>
+
+<article>
+  <Markdown>
+    At **{company}**, we love {thing}!
+  </Markdown>
+
+  <slot />
+</article>
