@@ -1,14 +1,13 @@
 ---
 import Navigation from '../components/Navigation.astro'
-import SiteInfo from '../components/SiteInfo.astro'
 
-let title = "Let's learn Astro!";
+const { content } = Astro.props
 ---
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
-  <title>{title}</title>
+  <title>{content.title}</title>
 
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="stylesheet" href="/style/global.css">
@@ -17,14 +16,12 @@ let title = "Let's learn Astro!";
   <main>
     <header>
       <img width="60" height="80" src="/assets/logo.svg" alt="Astro logo">
-      <h1>{title}</h1>
+      <h1>{content.title}</h1>
     </header>
 
     <Navigation />
 
-    <SiteInfo company="Sendcloud" thing="☕">
-      <p>Here's a bit more about Sendcloud.</p>
-    </SiteInfo>
+    <slot />
   </main>
 </body>
 </html>
