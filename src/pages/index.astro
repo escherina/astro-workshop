@@ -3,6 +3,9 @@ import Navigation from '../components/Navigation.astro'
 import SiteInfo from '../components/SiteInfo.astro'
 
 let title = "Let's learn Astro!";
+
+const response = await fetch('http://api.open-notify.org/astros.json')
+const { people } = await response.json()
 ---
 <html lang="en">
 <head>
@@ -12,6 +15,12 @@ let title = "Let's learn Astro!";
 
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="stylesheet" href="/style/global.css">
+
+  <style>
+    ul, p {
+      margin-top: 1rem;
+    }
+  </style>
 </head>
 <body>
   <main>
@@ -25,6 +34,18 @@ let title = "Let's learn Astro!";
     <SiteInfo company="Sendcloud" thing="☕">
       <p>Here's a bit more about Sendcloud.</p>
     </SiteInfo>
+
+    <section>
+      <h2>People in space right now 👨‍🚀</h2>
+
+      {people.length > 0 ?
+        <ul>
+        {people.map(person => <li>{person.name}</li>)}
+        </ul>
+        :
+        <p>No people in space! 🌎</p>
+      }
+    </section>
   </main>
 </body>
 </html>
