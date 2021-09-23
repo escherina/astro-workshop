@@ -22,6 +22,14 @@ body {
   }
 }
 
+main {
+  max-width: 60vw;
+}
+
+main > * + * {
+  margin-top: 2rem;
+}
+
 a {
   color: inherit;
 }
@@ -31,7 +39,6 @@ header {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  max-width: min(100%, 68ch);
 }
 
 header h1 {
