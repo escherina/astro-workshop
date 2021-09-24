@@ -2,6 +2,8 @@
 import Navigation from '../components/Navigation.astro'
 import SiteInfo from '../components/SiteInfo.astro'
 
+import IssLocation from '../components/IssLocation.vue'
+
 let title = "Let's learn Astro!";
 
 const response = await fetch('http://api.open-notify.org/astros.json')
@@ -33,6 +35,7 @@ const { people } = await response.json()
 
     <SiteInfo company="Sendcloud" thing="☕">
       <p>Here's a bit more about Sendcloud.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quas ut nobis porro dolor omnis animi? Esse nisi eos quisquam tempora sunt repellendus. Labore voluptatem voluptas quae tenetur? Totam, hic! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit repellendus vero, ipsam incidunt autem suscipit exercitationem, cum cumque enim corporis inventore ratione impedit, quam alias ad odio ab nam provident? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus magni repudiandae ad culpa hic, facilis nesciunt minima mollitia necessitatibus. Nostrum labore asperiores corrupti ipsa hic mollitia officiis deserunt dolor incidunt! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed inventore minima reiciendis praesentium dolore est debitis iusto distinctio dolorem voluptatum architecto deserunt illo molestias at officia ipsa recusandae, sit perspiciatis! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo corrupti distinctio minima, hic quo deleniti et omnis unde aliquid sit repudiandae obcaecati tenetur laboriosam blanditiis officia ut quod possimus! Animi!</p>
     </SiteInfo>
 
     <section>
@@ -46,6 +49,8 @@ const { people } = await response.json()
         <p>No people in space! 🌎</p>
       }
     </section>
+
+    <IssLocation client:visible />
   </main>
 </body>
 </html>
