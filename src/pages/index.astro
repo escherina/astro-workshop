@@ -2,7 +2,8 @@
 import Navigation from '../components/Navigation.astro'
 import SiteInfo from '../components/SiteInfo.astro'
 
-import IssLocation from '../components/IssLocation.vue'
+import IssLocationSvelte from '../components/IssLocationSvelte.svelte'
+import IssLocationVue from '../components/IssLocationVue.vue'
 
 let title = "Let's learn Astro!";
 
@@ -50,7 +51,8 @@ const { people } = await response.json()
       }
     </section>
 
-    <IssLocation client:visible />
+    <IssLocationVue client:visible />
+    <IssLocationSvelte client:visible />
   </main>
 </body>
 </html>
